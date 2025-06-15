@@ -1,7 +1,6 @@
-Dinero tools
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> Text your techie
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dinero Tools</title>
@@ -104,11 +103,11 @@ Dinero tools
       padding: 1.5rem 2rem;
       margin-top: 2rem;
     }
-    .payment, .whatsapp, .signup {
+    .payment, .whatsapp, .signup, .call {
       text-align: center;
       margin: 2rem 0;
     }
-    .whatsapp a {
+    .whatsapp a, .call a {
       color: green;
       font-weight: bold;
     }
@@ -118,6 +117,16 @@ Dinero tools
       color: black;
       text-decoration: none;
       border-radius: 6px;
+    }
+    .status {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .pending {
+      color: orange;
+    }
+    .completed {
+      color: green;
     }
   </style>
 </head>
@@ -167,19 +176,27 @@ Dinero tools
 
   <section class="payment">
     <h2>💳 Make a Payment</h2>
-    <p>We accept secure payments via Flutterwave and PayPal.</p>
-    <p><a href="#">Pay Now</a> (Coming soon)</p>
+    <p>Send your payment to the following account:</p>
+    <p><strong>Opay</strong> — 8125574098 — Akinade Timilehin David</p>
+    <div class="status pending">Status: Pending</div>
+    <p>After payment, contact support to mark as completed.</p>
+    <div class="status completed" style="display:none;">Status: Completed ✅</div>
   </section>
 
   <section class="signup">
     <h2>📝 Sign Up</h2>
     <p>Join our platform to get full access to tools and updates.</p>
-    <a href="#">Create Account</a>
+    <a href="signup.html">Create Account</a>
   </section>
 
   <section class="whatsapp">
     <h2>📞 Chat with Us</h2>
-    <p>Need help or have questions? <a href="https://wa.me/2349021335159" target="_blank">Chat on WhatsApp</a></p>
+    <p><a href="https://wa.me/2349021335159" target="_blank">Chat on WhatsApp</a></p>
+  </section>
+
+  <section class="call">
+    <h2>📱 Call Us</h2>
+    <p><a href="tel:09021335159">Call 09021335159</a></p>
   </section>
 
   <footer id="contact">
