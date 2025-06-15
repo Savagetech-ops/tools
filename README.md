@@ -209,6 +209,78 @@ SAVAGE TECH
       const theme = body.getAttribute('data-theme');
       body.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
     }
+
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .signup-container button {
+      width: 100%;
+      padding: 0.9rem;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <h2>Create Your Account</h2>
+    <form id="signup-form">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="tel" id="phone" placeholder="Phone Number" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    // TODO: Replace with your Firebase project config
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    const signupForm = document.getElementById('signup-form');
+    const messageBox = document.getElementById('message');
+
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        await auth.createUserWithEmailAndPassword(email, password);
+        messageBox.textContent = \"✅ Account created successfully!\";
+        messageBox.style.color = \"green\";
+      } catch (error) {
+        messageBox.textContent = \"❌ \" + error.message;
+        messageBox.style.color = \"red\";
+      }
+    });
+  </script>
+</body>
+</html>
+    // Default to light theme
+    document.body.setAttribute('data-theme', 'light');
+  </script>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -306,9 +378,5 @@ SAVAGE TECH
   </script>
 </body>
 </html>
-    // Default to light theme
-    document.body.setAttribute('data-theme', 'light');
-  </script>
-</body>
-</html>
+
 
