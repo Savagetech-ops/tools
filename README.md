@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+SAVAGE TECH 
 <html lang="en">
 <head> Text your techie
   <meta charset="UTF-8">
